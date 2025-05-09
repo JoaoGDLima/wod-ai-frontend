@@ -1,6 +1,6 @@
 import { useState } from "react";
 import tiposTreino from "../data/tiposTreinos.json";
-import Select from "react-select";
+import Select, { type MultiValue, type ActionMeta } from "react-select";
 import niveis from "../data/niveis.json";
 import objetivos from "../data/objetivos.json";
 import equipamentosData from "../data/equipamentos.json";
@@ -18,6 +18,13 @@ export default function HomePage() {
   const [modalVisible, setModalVisible] = useState(false);
   const [wodData, setWodData] = useState<any>(null);
 
+  const handleMultiSelectChange = (
+    setter: React.Dispatch<React.SetStateAction<any[]>>
+  ) => (newValue: MultiValue<any>, _actionMeta: ActionMeta<any>) => {
+    setter([...newValue]);
+  };
+
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const payload = {
@@ -26,7 +33,7 @@ export default function HomePage() {
       nivel,
       objetivo,
       equipamentos: equipamentos.map((e: any) => e.value),
-      evitarExercicios: evitarExercicios.map((e: any) => e.value),      
+      evitarExercicios: evitarExercicios.map((e: any) => e.value),
       historico: historico.split(",").map(e => e.trim()),
     };
     console.log("Prompt Payload:", payload);
@@ -133,7 +140,7 @@ export default function HomePage() {
           isMulti
           options={equipamentosData}
           value={equipamentos}
-          onChange={setEquipamentos}
+          onChange={handleMultiSelectChange(setEquipamentos)}
           className="w-full"
           placeholder="Selecione os equipamentos"
         />
@@ -142,7 +149,7 @@ export default function HomePage() {
           isMulti
           options={exerciciosData}
           value={evitarExercicios}
-          onChange={setEvitarExercicios}
+          onChange={handleMultiSelectChange(setEvitarExercicios)}
           className="w-full"
           placeholder="Exercícios a evitar"
         />
@@ -175,3 +182,4 @@ export default function HomePage() {
     </div>
   );
 }
+

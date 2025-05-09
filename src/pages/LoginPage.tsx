@@ -12,7 +12,7 @@ const LoginPage = () => {
   const navigate = useNavigate(); 
   const { login } = useAuth();
 
-  const handleSubmit = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement) => {
     e.preventDefault();
 
     if (email === "" || senha === "") {
