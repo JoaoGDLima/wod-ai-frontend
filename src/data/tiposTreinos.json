@@ -1,0 +1,11 @@
+[
+    { "label": "For Time (FT)", "value": "For Time" },
+    { "label": "AMRAP (As Many Rounds As Possible)", "value": "AMRAP" },
+    { "label": "EMOM (Every Minute On the Minute)", "value": "EMOM" },
+    { "label": "For Reps (FR)", "value": "For Reps" },
+    { "label": "PR (Personal Record)", "value": "PR" },
+    { "label": "Chipper", "value": "Chipper" },
+    { "label": "Tabata", "value": "Tabata" },
+    { "label": "Pyramid", "value": "Pyramid" }
+  ]
+  

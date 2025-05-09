@@ -1,0 +1,9 @@
+[
+  { "atributo": "Força", "valor": 5, "peso": 2 },
+  { "atributo": "Resistência", "valor": 6, "peso": 1 },
+  { "atributo": "Técnica", "valor": 7, "peso": 2 },
+  { "atributo": "Ginásticos", "valor": 5, "peso": 1 },
+  { "atributo": "Mobilidade", "valor": 4, "peso": 1 },
+  { "atributo": "Potência", "valor": 6, "peso": 2 },
+  { "atributo": "Coordenação", "valor": 5, "peso": 1 }
+]
