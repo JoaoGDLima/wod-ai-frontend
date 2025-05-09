@@ -12,6 +12,9 @@ const LoginPage = () => {
   const navigate = useNavigate(); 
   const { login } = useAuth();
 
+  const apiUrl = import.meta.env.VITE_API_URL;
+
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -24,7 +27,7 @@ const LoginPage = () => {
     setLoading(true); // Ativa o carregando
 
     try {
-      const response = await axios.post("http://localhost:3000/auth/login", {
+      const response = await axios.post(`${apiUrl}/auth/login`, {
         email,
         senha,
       });
