@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaHome, FaUser, FaUserPlus, FaUsers, FaBars, FaTimes, FaSignOutAlt, FaSignInAlt, FaPlusCircle } from "react-icons/fa"; // Importando o ícone para o cadastro
+import { FaHome, FaUser, FaUsers, FaBars, FaTimes, FaSignOutAlt, FaSignInAlt, FaPlusCircle } from "react-icons/fa"; // Importando o ícone para o cadastro
 import { useAuth } from "../hooks/useAuth";
 
 export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
-  const { user, logout, isAuthenticated } = useAuth(); // Usando o hook de autenticação
+  const { user, logout } = useAuth(); // Usando o hook de autenticação
 
   const linkStyle = (path: string) =>
     location.pathname === path

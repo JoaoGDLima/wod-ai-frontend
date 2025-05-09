@@ -3,7 +3,7 @@ import { calcularScorePonderado } from "../utils/calculateScore";
 
 type PerfilAtletaTopProps = {
   user: { avatarUrl: string; name: string };
-  atributos: { atributo: string; valor: number; peso?: number }[];
+  atributos: { atributo: string; valor: number; peso: number }[];
 };
 
 export default function PerfilAtletaTop({ user, atributos }: PerfilAtletaTopProps) {
